@@ -1,0 +1,16 @@
+<!doctype html>
+<head>
+      <title>{{book_query}}</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="main">
+  {% for book, highlights in book_highlights.items() %}
+    <h2>{{book.title}} ({{book.author}})</h2>
+    {% for h in highlights %}
+      <p>{{h.text}}</p>
+    {% endfor %}
+  {% endfor %}
+  </div>
+</body>

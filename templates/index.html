@@ -1,0 +1,15 @@
+<!doctype html>
+<head>
+      <title>Kobo Books</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="main">
+    <ul>
+    {% for book, count in book_counts.items() %}
+      <li><a href="book/{{ book }}">{{ book }}</a> <span style="color: #888">({{ count }})</span></li>
+    {% endfor %}
+    </ul>
+  </div>
+</body>
